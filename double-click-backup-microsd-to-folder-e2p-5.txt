@@ -1,0 +1,68 @@
+@echo off
+REM Define the destination folder path
+SET "DESTINATION=C:\Docs\- 3D printer\MicroSD-clone-Ender-2-Pro"
+
+REM Step 1: Folder existence check
+echo 1. Folder existence check
+timeout /T 3 >nul
+
+REM Check if the folder exists
+IF EXIST "%DESTINATION%" (
+    REM Case 1: Folder exists
+    echo 2. Folder named MicroSD-clone-Ender-2-Pro found
+    timeout /T 3 >nul
+
+    REM Step 3: Delete the existing folder
+    echo 3. Existing folder named MicroSD-clone-Ender-2-Pro deleted
+    rmdir /S /Q "%DESTINATION%"
+    timeout /T 3 >nul
+
+    REM Step 4: Create a new folder
+    echo 4. New folder named MicroSD-clone-Ender-2-Pro created
+    mkdir "%DESTINATION%"
+    timeout /T 3 >nul
+
+    REM Step 5: Start copying files
+    echo 5. Starting to copy files from the microSD card to "%DESTINATION%"...
+    timeout /T 3 >nul
+
+    REM Get the drive letter of the script (microSD card drive)
+    SET "SOURCE=%~d0"
+
+    REM Copy all contents from the microSD card to the destination folder (showing each file being copied)
+    xcopy "%SOURCE%\*" "%DESTINATION%" /E /H /C /I /Y
+
+    REM Wait 3 seconds after all files are copied
+    timeout /T 3 >nul
+
+    REM Step 6: Copying completed
+    echo 5. Copying completed
+) ELSE (
+    REM Case 2: Folder does not exist
+    echo 2. Folder named MicroSD-clone-Ender-2-Pro not found
+    timeout /T 3 >nul
+
+    REM Step 3: Create a new folder
+    echo 3. New folder named MicroSD-clone-Ender-2-Pro created
+    mkdir "%DESTINATION%"
+    timeout /T 3 >nul
+
+    REM Step 4: Start copying files
+    echo 4. Starting to copy files from the microSD card to "%DESTINATION%"...
+    timeout /T 3 >nul
+
+    REM Get the drive letter of the script (microSD card drive)
+    SET "SOURCE=%~d0"
+
+    REM Copy all contents from the microSD card to the destination folder (showing each file being copied)
+    xcopy "%SOURCE%\*" "%DESTINATION%" /E /H /C /I /Y
+
+    REM Wait 3 seconds after all files are copied
+    timeout /T 3 >nul
+
+    REM Step 5: Copying completed
+    echo 4. Copying completed
+)
+
+REM Pause to keep the command prompt open
+pause
