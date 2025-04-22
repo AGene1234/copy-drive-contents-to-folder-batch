@@ -17,7 +17,7 @@ It is an one time user-centric double click way to keep a copy of all the conten
 1. open a file explorer,
 2. navigate to the drive and open it,
 3. double click the batch file saved inside the drive,
-4. when the script starts to run a cmd will appear showing the steps of the process for both cases 1. if there is a folder and 2. if there isn't, and a list of the contents that are copied in the user specified folder,
+4. when the script starts to run a cmd will appear showing the steps of the process for both cases 1. if there is a folder and 2. if there isn't, and a list of the contents that are copied in the user specified folder with 3 second delays between steps due to the user-centric nature of the script to let the user catch-up,
 5. navigate to the user-specified folder to view the files.
 
-*in the text files, the desired path and the name of the folder also need to be changed (currently i left mine, name of folder MicroSD-clone-Ender-2-Pro and path C:\Docs\- 3D printer\MicroSD-clone-Ender-2-Pro, to give an idea what needs change).*
+*in the text file, the desired path and the name of the folder also need to be changed (currently i left mine, name of folder MicroSD-clone-Ender-2-Pro and path C:\Docs\- 3D printer\MicroSD-clone-Ender-2-Pro, to give an idea what needs change).*
